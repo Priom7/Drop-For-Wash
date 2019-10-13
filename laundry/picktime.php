@@ -38,6 +38,10 @@ if(isset($_POST['package'])){
 
 <script>
  $('#sandbox-container input.date').datepicker({
+    // changeMonth: true,
+    // changeYear: true,
+    minDate: 0
+
 });
 </script>
 <?php 

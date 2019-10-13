@@ -1,0 +1,85 @@
+/*  phpBB3 Style Sheet
+    --------------------------------------------------------------
+	Style name:			prosilver (the default phpBB 3.1.x style)
+	Based on style:		
+	Original author:	Tom Beddard ( http://www.subblue.com/ )
+	Modified by:		phpBB Limited ( https://www.phpbb.com/ )
+    --------------------------------------------------------------
+*/
+
+@import url("common.css");
+@import url("links.css");
+@import url("content.css");
+@import url("buttons.css");
+@import url("cp.css");
+@import url("forms.css");
+@import url("colours.css");
+@import url("imageset.css");
+
+
+
+
+#pricing ul{
+	background-color: #000;
+	height: 450px;
+}
+#pricing .list-group-item{
+	border: 0;
+	background: #000;
+    color: #fff;
+}
+#pricing ul li:first-child{
+	border: 2px solid #fff;
+	border-radius: 50%;
+	margin:30px 50px;
+	height: 40%;
+	padding: 30px;
+}	
+#pricing ul li:last-child{
+    border: 2px solid transparent;
+    background-color: #fff;
+    border-radius: 5%;
+    padding: 5px;
+    text-decoration: none;
+    margin:10px;
+}
+#pricing ul:hover li:first-child,#pricing ul:hover li:last-child{
+	background-color: #fff;
+	color: #87d37c;
+}
+#pricing ul:hover,#pricing ul:hover .list-group-item{
+	color: #fff;
+	background-color: #87d37c;
+}#pricing ul{
+	background-color: #000;
+	height: 450px;
+}
+#pricing .list-group-item{
+	border: 0;
+	background: #000;
+    color: #fff;
+}
+#pricing ul li:first-child{
+	border: 2px solid #fff;
+	border-radius: 50%;
+	margin:30px 50px;
+	height: 40%;
+	padding: 30px;
+}	
+#pricing ul li:last-child{
+    border: 2px solid transparent;
+    background-color: #fff;
+    border-radius: 5%;
+    padding: 5px;
+    text-decoration: none;
+    margin:10px;
+}
+#pricing ul:hover li:first-child,#pricing ul:hover li:last-child{
+	background-color: #fff;
+	color: #87d37c;
+}
+#pricing ul:hover,#pricing ul:hover .list-group-item{
+	color: #fff;
+	background-color: #87d37c;
+
+

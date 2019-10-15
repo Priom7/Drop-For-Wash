@@ -2,15 +2,93 @@
 include'header.php';
 
 ?>
-<div class="row">
-    <div class="col-md-6 col-md-offset-3">
-       <h2>All Members of GoodWash Laundry System:</h2>
-      
-       <style type="text/css">
+
+
+
+<style type="text/css">
            td,tr,th{border: 1px solid;
             padding: 5px}
        </style>
-       <table width="100%" style="margin: 100px 0px; ">
+
+<style>
+.search-table{
+    padding: 10%;
+    margin-top: -6%;
+}
+.search-box{
+    background: #c1c1c1;
+    border: 1px solid #ababab;
+    padding: 3%;
+}
+.search-box input:focus{
+  align : center;
+    box-shadow:none;
+    border:2px solid #eeeeee;
+}
+.search-list{
+    background: #fff;
+    border: 1px solid #ababab;
+    border-top: none;
+}
+.search-list h3{
+    background: #eee;
+    padding: 3%;
+    margin-bottom: 0%;
+}
+</style>
+<div class="row">
+<div class="col-md-6 col-md-offset-3">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link href="./css/font-awesome.min.css" rel="stylesheet">
+<!------ Include the above in your HEAD tag ---------->
+<h1 align="center">All Members of Drop For Wash Laundry System:</h1>
+<br/>
+<div class="search-box">
+                <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                        <h5><i class="fas fa-search"></i>Search</h5>
+                    </div>
+                    <div class="col-md-9">
+                        <input type="text" id="myInput" onkeyup="myFunction()" class="form-control" placeholder="Search all fields...">
+                        <script>
+                            $(document).ready(function () {
+                                $("#myInput").on("keyup", function () {
+                                    var value = $(this).val().toLowerCase();
+                                    $("#myTable tr").filter(function () {
+                                        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                                    });
+                                });
+                            });
+                        </script>
+                    </div> 
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+
+      
+  
+       <table id="myTable" class="table" width="100%" style="margin: 100px 0px; ">
+       <thead class="thead-dark">
                 <tr>
                     <th>Id</th>
                     <th>Name</th>
@@ -21,6 +99,7 @@ include'header.php';
                     <th>City</th>
                     <th>Address</th>
                 </tr>
+                </thead>
               <?php
                 $stmt=$conn->prepare("SELECT * FROM `users` ");
                 

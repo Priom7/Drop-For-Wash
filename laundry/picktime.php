@@ -19,7 +19,7 @@ if(isset($_POST['package'])){
                 <br>
                 <div id="sandbox-container" style="margin: 20px;">
                     <label>Date:</label>
-                    <input class="form-control date" type="text" name="date" autocomplete="off">
+                    <input class="form-control date" type="text" name="date" data-date-format='yyyy-mm-dd' autocomplete="off">
                     <label>Time:</label>
                     <small class="form-text text-danger">Please enter time in 24 hours format.</small>
                      <input class="form-control time" type="text" name="time" autocomplete="off" placeholder="Give your preferable time. ">
@@ -40,9 +40,11 @@ if(isset($_POST['package'])){
  $('#sandbox-container input.date').datepicker({
     // changeMonth: true,
     // changeYear: true,
+    dateFormat: 'dd/mm/yy',
     minDate: 0
 
 });
+
 </script>
 <?php 
 include'footer.php';

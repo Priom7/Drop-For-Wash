@@ -95,6 +95,18 @@ if(isset($_POST['order'])){
 						<b>
 						<?php
 							$grant_total_amount=$sum+$package_price;
+							if($grant_total_amount<=20){
+								echo '<span style="color:	#FF0000;text-align:center;">(Quantity Not Selected Yet!)<br/></span>';
+								
+							}
+							if($date==""){
+								echo '<span style="color:	#FF0000;text-align:center;">(Pickup Date Not Selected Yet!)<br/></span>';
+								
+							}
+							if($time==""){
+								echo '<span style="color:	#FF0000;text-align:center;">(Pickup Time Not Selected Yet! Default time: 9.00am - 5.00pm)<br/></span>';
+								
+							}
 							echo $grant_total_amount;
 						 ?>
 						
@@ -109,12 +121,20 @@ if(isset($_POST['order'])){
 					<input type="hidden" name="city" value="<?php echo $city; ?>">
 					<input type="hidden" name="pack" value="<?php echo $pack; ?>">
 					<input type="hidden" name="date" value="<?php echo $date; ?>">
-					<input type="hidden" name="time" value="<?php echo $time; ?>">
+					<input type="hidden" name="time" value="<?php
+					// if($time==""){
+					// 	echo '<span style="color:	#FF0000;text-align:center;">(Pickup Time Not Selected Yet! Default time: 9.00am - 5.00pm)</span>';
+
+					// }
+					 echo $time; ?>">
 					<input type="hidden" name="Product_name[]" value="<?php echo $Product_name; ?>">
 					<input type="hidden" name="Product_price[]" value="<?php echo $Product_price; ?>">
 					<input type="hidden" name="qty[]" value="<?php echo $qty; ?>">
 					<input type="hidden" name="grantTotal" value="<?php echo $grant_total_amount; ?>">
+					<?php if (($grant_total_amount>20)&&($date!="")) { ?> 
 					<input type="submit" name="confirm" value="Confirm Order" class="btn btn-info">
+					
+					<?php } ?>
 				</form>
 				<br>
 				<br>

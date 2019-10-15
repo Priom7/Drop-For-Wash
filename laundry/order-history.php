@@ -34,7 +34,8 @@ include'header.php';
     margin-bottom: 0%;
 }
 </style>
-
+<div class="row">
+<div class="col-md-6 col-md-offset-3">
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -43,11 +44,11 @@ include'header.php';
 <h1 align="center">Your Order History</h1>
 <div class="search-box">
                 <div class="row">
-                    <div class="col-md-3">
-                        <h5><i class="fas fa-search"></i>Search All Fields</h5>
+                <div class="col-md-6 col-md-offset-3">
+                        <h5><i class="fas fa-search"></i>Search</h5>
                     </div>
                     <div class="col-md-9">
-                        <input type="text" id="myInput" onkeyup="myFunction()" class="form-control" placeholder="Search all fields e.g. HTML">
+                        <input type="text" id="myInput" onkeyup="myFunction()" class="form-control" placeholder="Search all fields...">
                         <script>
                             $(document).ready(function () {
                                 $("#myInput").on("keyup", function () {
@@ -64,7 +65,7 @@ include'header.php';
 
 
 
-      <div class="search-list">
+  
        <table id="myTable" class="table" width="100%" style="margin: 100px 0px; ">
        <thead class="thead-dark">
                 <tr>
@@ -90,10 +91,10 @@ foreach ($stmt_data as $key => $data) {
    $pickup_time=$data['5'];
    $total=$data['7'];
    if($package=="Ordinary"){
-     $delivery_time = date('m/d/Y', strtotime($pickup_date. ' + 5 days')); 
+     $delivery_time = date('d/m/Y', strtotime($pickup_date. ' + 5 days')); 
    }
    else if($package=="Urgent"){
-    $delivery_time = date('m/d/Y', strtotime($pickup_date. ' + 2 days')); 
+    $delivery_time = date('d/m/Y', strtotime($pickup_date. ' + 2 days')); 
   }
     echo'<tr>
                     <td>'.$branch.'</td>

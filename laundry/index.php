@@ -2,12 +2,16 @@
 include'header.php';
 ?>
 <style>
+
+
+
 * {
   box-sizing: border-box;
 }
 
 body {
   font-family: Arial, Helvetica, sans-serif;
+ 
 }
 
 /* Float four columns side by side */
@@ -51,6 +55,7 @@ body {
   border-radius: 50%;
 }
 </style>
+<body>
  <div>
         <div class="container">
             <div class="row">
@@ -95,7 +100,7 @@ body {
             </div>
         </div>
     </div>
-    
+</body>
 <?php 
 include'footer.php';
 ?>

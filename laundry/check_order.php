@@ -2,10 +2,7 @@
 include'header.php';
 
 ?>
-            <style type="text/css">
-           td,tr,th{border: 1px solid;
-            padding: 5px}
-       </style>
+            
 
 <style>
 
@@ -44,10 +41,10 @@ include'header.php';
 <h1 align="center">All Order History:</h1>
 <div class="search-box">
                 <div class="row">
-                    <div class="col-md-6 col-md-offset-3">
+                    <div class="col-md-12 col-md-offset-3">
                         <h5><i class="fas fa-search"></i>Search</h5>
                     </div>
-                    <div class="col-md-9">
+                    <div class="col-md-12">
                         <input type="text" id="myInput" onkeyup="myFunction()" class="form-control" placeholder="Search all fields...">
                         <script>
                             $(document).ready(function () {
@@ -66,7 +63,10 @@ include'header.php';
 
 
 
-
+            <style type="text/css">
+           td,tr,th{border: 1px solid;
+            padding: 5px}
+       </style>
 
 
 
@@ -120,6 +120,7 @@ foreach ($stmt_data as $key => $data) {
 }
               ?>
             </table>
+</div>
 </div>
 </div>
 <?php 

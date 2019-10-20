@@ -7,6 +7,8 @@ if(isset($_POST['confirm'])){
     $pack=$_POST['pack'];
     $pdate=$_POST['date'];
     $ptime=$_POST['time'];
+    $ddate=$_POST['delivery_date'];
+    $dtime=$_POST['delivery_time'];
     $Product_name=$_POST['Product_name'];
     $Product_price=$_POST['Product_price'];
     $qty=$_POST['qty'];
@@ -21,14 +23,24 @@ if(isset($_POST['confirm'])){
         $address=$data['address'];
     }
 
-    $stmt = $conn->prepare("INSERT INTO `laundry_order`(`user_id`, `branch`, `package`, `pickup_date`, `pickup_time`, `address`, `total`) VALUES (:user,:city,:pack,:pdate,:ptime,:address,:total)");
+    $stmt = $conn->prepare("INSERT INTO `laundry_order`(`user_id`, `branch`, `package`, `pickup_date`, `pickup_time`, `delivery_date`, `delivery_time`, `address`, `total`) VALUES (:user,:city,:pack,:pdate,:ptime,:ddate,:dtime,:address,:total)");
         $stmt->bindParam(':user',$_SESSION['user_id']);
         $stmt->bindParam(':city', $city);
         $stmt->bindParam(':pack', $pack );
         $stmt->bindParam(':pdate', $pdate );
         $stmt->bindParam(':ptime', $ptime );
+       $stmt->bindParam(':ddate', $ddate );
+       $stmt->bindParam(':dtime', $dtime );
         $stmt->bindParam(':address', $address );
         $stmt->bindParam(':total', $grantTotal );
+
+
+//         if (!mysqli_query($conn,"INSERT INTO `laundry_order`(`user_id`, `branch`, `package`, `pickup_date`, `pickup_time`, 'delivery_date', 'delivery_time', `address`, `total`) VALUES (:user,:city,:pack,:pdate,:ptime,:ddate,:dtime,:address,:total)"))
+//   {
+//   echo("Error description: " . mysqli_error($con));
+//   }
+
+// mysqli_close($con);
       
         if ($stmt->execute()) { 
 
@@ -46,6 +58,8 @@ if(isset($_POST['confirm'])){
     <div class="col-md-6 col-md-offset-3">
         <h1 class="success"><?php if($msg !==''){echo $msg;}
         ?></h1>
+        <br/>
+        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 </div>
 </div>
 <?php 

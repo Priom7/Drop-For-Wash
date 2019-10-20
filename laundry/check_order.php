@@ -81,6 +81,7 @@ include'header.php';
                     <th>Pickup Date</th>
                     <th>Pickup Time</th>
                     <th>Delivery Date</th>
+                    <th>Delivery Time</th>
                     <th>Total</th>
                 </tr>
                 </thead>
@@ -97,14 +98,16 @@ foreach ($stmt_data as $key => $data) {
    $package=$data['3'];
    $pickup_date=$data['4'];
    $pickup_time=$data['5'];
-   $total=$data['7'];
+   $delivery_date=$data['6'];
+   $delivery_time=$data['7'];
+   $total=$data['9'];
 
-   if($package=="Ordinary"){
-    $delivery_time = date('d/m/Y', strtotime($pickup_date. ' + 5 days')); 
-  }
-  else if($package=="Urgent"){
-   $delivery_time = date('d/m/Y', strtotime($pickup_date. ' + 2 days')); 
- }
+//    if($package=="Ordinary"){
+//     $delivery_time = date('d/m/Y', strtotime($pickup_date. ' + 5 days')); 
+//   }
+//   else if($package=="Urgent"){
+//    $delivery_time = date('d/m/Y', strtotime($pickup_date. ' + 2 days')); 
+//  }
    
     echo'<tr>
                     <td>'.$order_id.'</td>
@@ -112,6 +115,7 @@ foreach ($stmt_data as $key => $data) {
                     <td>'.$package.'</td>
                     <td>'.$pickup_date.'</td>
                     <td>'.$pickup_time.'</td>
+                    <td>'.$delivery_date.'</td>
                     <td>'.$delivery_time.'</td>
                     <td>'.$total.'</td>
                     

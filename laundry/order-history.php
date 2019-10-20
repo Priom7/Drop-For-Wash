@@ -74,6 +74,7 @@ include'header.php';
                     <th>Pickup Date</th>
                     <th>Pickup Time</th>
                     <th>Delivery Date</th>
+                    <th>Delivery Time</th>
                     <th>Total</th>
                     <th>Option</th>
                 </tr>
@@ -89,18 +90,21 @@ foreach ($stmt_data as $key => $data) {
    $package=$data['3'];
    $pickup_date=$data['4'];
    $pickup_time=$data['5'];
-   $total=$data['7'];
-   if($package=="Ordinary"){
-     $delivery_time = date('d/m/Y', strtotime($pickup_date. ' + 5 days')); 
-   }
-   else if($package=="Urgent"){
-    $delivery_time = date('d/m/Y', strtotime($pickup_date. ' + 2 days')); 
-  }
+   $delivery_date=$data['6'];
+   $delivery_time=$data['7'];
+   $total=$data['9'];
+//    if($package=="Ordinary"){
+//      $delivery_time = date('d/m/Y', strtotime($pickup_date. ' + 5 days')); 
+//    }
+//    else if($package=="Urgent"){
+//     $delivery_time = date('d/m/Y', strtotime($pickup_date. ' + 2 days')); 
+//   }
     echo'<tr>
                     <td>'.$branch.'</td>
                     <td>'.$package.'</td>
                     <td>'.$pickup_date.'</td>
                     <td>'.$pickup_time.'</td>
+                    <td>'.$delivery_date.'</td>
                     <td>'.$delivery_time.'</td>
                     <td>'.$total.'</td>
                     <td><a href="delete_order.php?order_id='.$order_id.'" class="btn btn-danger m-l-20 waves-effect waves-light" style="color:#ffffff">Delete</a></td?

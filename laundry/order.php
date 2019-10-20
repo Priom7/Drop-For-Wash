@@ -1,11 +1,13 @@
 <?php 
 include'header.php';
 
-if(isset($_POST['picktime'])){
+if(isset($_POST['deliverytime'])){
 	$city=$_POST['city'];
 	$pick=$_POST['pack'];
 	$date=$_POST['date'];
-	$time=$_POST['time'];
+    $time=$_POST['time'];
+    $delivery_date=$_POST['delivery_date'];
+	$delivery_time=$_POST['delivery_time'];
 }
 
 ?>
@@ -24,6 +26,8 @@ if(isset($_POST['picktime'])){
 				<input type="hidden" name="pack" value="<?php echo $pick; ?>">
 				<input type="hidden" name="date" value="<?php echo $date; ?>">
 				<input type="hidden" name="time" value="<?php echo $time; ?>">
+				<input type="hidden" name="delivery_date" value="<?php echo $delivery_date; ?>">
+    			<input type="hidden" name="delivery_time" value="<?php echo $delivery_time; ?>">
 
 				<fieldset>
 					<table width="100%">

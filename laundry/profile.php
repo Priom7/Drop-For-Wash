@@ -3,7 +3,7 @@
 <?php 
 include'header.php';
 ?>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport"  content="width=device-width, initial-scale=1">
 <style>
 .avatar {
   vertical-align: middle;
@@ -20,6 +20,7 @@ include'header.php';
 
 
 <style>
+
 body{padding-top:30px;}
 
 .glyphicon {  margin-bottom: 10px;margin-right: 10px;}
@@ -28,28 +29,29 @@ small {
 display: block;
 line-height: 1.428571429;
 color: #999;
+
 }
 </style>
 
 
-
-
+<body>
 
 
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
-
-<div class="container">
-    <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-6">
-            <div class="well well-sm">
-                <div class="row">
-                    <div class="col-sm-6 col-md-4">
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+<div class="container" align="center" >
+    <div class="row" align="center">
+        <div class="col-xs-12 col-sm-6 col-md-6" align="center" >
+            <div class="well well-sm" align="center">
+                <div class="row" align="center">
+                    <div class="col-sm-6 col-md-4" align="center">
                         <img src="img/avater.png" alt="" class="img-rounded img-responsive" />
                     </div>
-                    <div class="col-sm-6 col-md-8">
+                    <div class="col-sm-6 col-md-8" align="center">
                         <h4>
 						<?php
 								// check user login
@@ -167,16 +169,14 @@ color: #999;
     </div>
 </div>
 
+<br/>
+<br/>
+<br/>
+<br/>
+<br/><br/><br/><br/><br/>
+</body>
 
 
 
 
 
-
-
-
-
-
-<?php 
-include'footer.php';
-?>

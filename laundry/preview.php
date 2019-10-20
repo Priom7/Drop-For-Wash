@@ -6,6 +6,8 @@ if(isset($_POST['order'])){
 	$pack=$_POST['pack'];
 	$date=$_POST['date'];
 	$time=$_POST['time'];
+	$delivery_date=$_POST['delivery_date'];
+	$delivery_time=$_POST['delivery_time'];
 	$Product_name=$_POST['pdctname'];
 	$Product_price=$_POST['pdctprice'];
 	$qty=$_POST['qty'];
@@ -30,12 +32,16 @@ if(isset($_POST['order'])){
 					<th>Package</th>
 					<th>Pickup Date</th>
 					<th>Pickup Time</th>
+					<th>Delivery Date</th>
+					<th>Delivery Time</th>
 				</tr>
 				<tr>
 					<td><?php echo $city; ?></td>
 					<td><?php echo $pack; ?></td>
 					<td><?php echo $date; ?></td>
 					<td><?php echo $time; ?></td>
+					<td><?php echo $delivery_date; ?></td>
+					<td><?php echo $delivery_time; ?></td>
 				</tr>
 			</table>
 			<br>
@@ -127,6 +133,8 @@ if(isset($_POST['order'])){
 
 					// }
 					 echo $time; ?>">
+					 <input type="hidden" name="delivery_time" value="<?php echo $delivery_time; ?>">
+					<input type="hidden" name="delivery_date" value="<?php echo $delivery_date; ?>">
 					<input type="hidden" name="Product_name[]" value="<?php echo $Product_name; ?>">
 					<input type="hidden" name="Product_price[]" value="<?php echo $Product_price; ?>">
 					<input type="hidden" name="qty[]" value="<?php echo $qty; ?>">

@@ -1,7 +1,7 @@
 <?php
 // Start Session
 session_start();
-require_once 'emailController.php';
+// require_once 'emailController.php';
 $user_id='';
 $username='';
 // Application library ( with DemoLib class )
@@ -60,9 +60,9 @@ if (!empty($_POST['btnRegister'])) {
         $user_id = $app->Register($_POST['name'], $_POST['email'], $_POST['username'], $_POST['password']);
         // set session and redirect user to the profile page
         $_SESSION['user_id'] = $user_id;
-		// header("Location: profile.php");
-		sendVerificationEmail($userEmail, $token);
-		header("Location: verify.php");
+		header("Location: profile.php");
+		// sendVerificationEmail($userEmail, $token);
+		// header("Location: verify.php");
     }
 }
 
